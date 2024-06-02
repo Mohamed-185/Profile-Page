@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" type="text/css" href="./Assets/editProfile.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Edit Info</h1>
+        <div class="error-div"><%= errorMessage %></div>
+        <% if (takenInfo == false){ %>
+        <form action="updatedProfile" method="POST" enctype="multipart/form-data">
+            <input type="hidden" value="<%= oldEmail %>" name="oldEmail">
+            <label for="firstname">New First Name</label>
+            <input type="text" id="firstname" name="firstName" placeholder="Enter your new First Name" required>
+            <label for="lasttname">New Last Name</label>
+            <input type="text" id="lastname" name="lastName" placeholder="Enter your new Last Name" required>
+            <label for="email">New Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your new Email" required>
+            <label for="password">New Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter the new Password" required>
+            <label for="password">Confirm New Password</label>
+            <input type="password" id="confirmpassword" name="confirmPassword" placeholder="Confirm the new Password"
+                required>
+            <label for="image">Choose image</label>
+            <input type="file" name="image">
+            <div class="buttons-container">
+                <input type="submit" value="Next" class="next">
+                <a href="javascript:history.back()" class="discard-anchor">
+                    <div class="discard">Discard</div>
+                </a>
+            </div>
+        </form>
+        <% } %>
+        <% if (takenInfo == true){ %>
+            <form action="fullUpdated" method="POST">
+                <input type="hidden" value="<%= oldEmail %>" name="oldEmail">
+                <input type="hidden" name="firstName" value="<%= firstName %>">
+                <input type="hidden" name="lastName" value="<%= lastName %>">
+                <input type="hidden" name="email" value="<%= email %>">
+                <input type="hidden" name="password" value="<%= password %>">
+                <input type="hidden" name="image" value="<%= image %>">
+                <label for="email">Twitter</label>
+                <input type="email" id="email" name="twitter" placeholder="Enter your Email" required>
+                <label for="email">Facebook</label>
+                <input type="email" id="email" name="facebook" placeholder="Enter your Email" required>
+                <label for="email">Linked In</label>
+                <input type="email" id="email" name="linkedIn" placeholder="Enter your Email" required>
+                <label for="email">Skype</label>
+                <input type="email" id="email" name="skype" placeholder="Enter your Email" required>
+                <label for="email">Instagram</label>
+                <input type="email" id="email" name="insta" placeholder="Enter your Email" required>
+                <div class="buttons-container">
+                    <input type="submit" value="Save" class="save">
+                    <a href="javascript:history.back()" class="discard-anchor">
+                        <div class="discard">Discard</div>
+                    </a>
+                </div>
+            </form>
+        <% } %>
+    </div>
+</body>
+
+</html>

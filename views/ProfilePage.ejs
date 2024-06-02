@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/011f0557e4.js" crossorigin="anonymous"></script>
+    <title>Profile Page</title>
+</head>
+
+<body>
+    <div id="main">
+        <div id="leftDiv">
+            <p class="name">
+                <%= fullName %>
+            </p>
+            <img class="online" src="../imgaes/online.png">
+            <p class="activity"> Online</p>
+            <img class="profile-picture" src=<%= image %>>
+            <p class="title"> Admin</p>
+            <img class="stars" src="../imgaes/ratingStar.PNG">
+            <p class="rating"> Super User</p>
+            <p class="membership"> Member since: Jan 2012</p>
+            <div class="details">
+                <div>
+                    <i class="fa-solid fa-truck left-div-icons"></i>
+                    <p class=order> Orders: <span class="numbers">456</span></p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-comment left-div-icons"></i>
+                    <p class=posts> Posts: <span class="numbers">828</span></p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-list-check left-div-icons"></i>
+                    <p class=tasksdone> Tasks done: <span class="numbers">1024</span></p>
+                </div>
+            </div>
+            <button class="button-edit"> <i class="fa-regular fa-envelope"></i> Send message</button>
+        </div>
+
+        <div id="upperDiv">
+            <div class="upperDiv-header">
+                <div class="upperDiv-header-text"> User info</div>
+                <!-- <a href="/editInfo" ><button class="upperDiv-header-button"><i class="fa-solid fa-pen-to-square fa-lg" style="color: #ffffff;"></i><span>Edit profile</span></button></a> -->
+                <form action="editInfo" method="POST">
+                    <input type="hidden" name="curEmail" value="<%= email %>">
+                    <button class="upperDiv-header-button"><i class="fa-solid fa-pen-to-square fa-lg"
+                            style="color: #ffffff;"></i><span>Edit profile</span></button>
+                </form>
+            </div>
+
+            <div class="upperDiv-info">
+                <div class="upperDiv-info-content">
+                    <div class="upperDiv-info-content-left-col">First Name:</div>
+                    <div>
+                        <%= firstName %>
+                    </div>
+                    <div class="upperDiv-info-content-left-col">Last Name: </div>
+                    <div>
+                        <%= lastName %>
+                    </div>
+                    <div class="upperDiv-info-content-left-col">Address</div>
+                    <div>10880 Malibu Point, Malibu, calif., 90265</div>
+                    <div class="upperDiv-info-content-left-col">Email:</div>
+                    <div>
+                        <%= email %>
+                    </div>
+                    <div class="upperDiv-info-content-left-col">Phone number</div>
+                    <div>011223344556677</div>
+                </div>
+                <div class="upperDiv-info-contacts">
+                    <div><i class="fa-brands fa-square-twitter fa-bounce fa-sm"></i><span><%= twitter %></span></div>
+                    <div><i class="fa-brands fa-linkedin fa-bounce fa-sm"></i><span>
+                            <%= linkedIn%>
+                        </span></div>
+                    <div><i class="fa-brands fa-square-facebook fa-bounce fa-sm"></i><span>
+                            <%= facebook%>
+                        </span></div>
+                    <div><i class="fa-brands fa-skype fa-bounce fa-sm"></i><span><%= skype %></span></div>
+                    <div><i class="fa-brands fa-square-instagram fa-bounce fa-sm"></i><span><%= insta %></span></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="lowerDiv">
+            <div class="buttons-div">
+                <button class="bar-button">Activity</button>
+                <button class="bar-button activ">
+                    <font color="#40CFBE">Friends</font>
+                </button>
+                <button class="bar-button activ">
+                    <font color="#40CFBE">Chat</font>
+                </button>
+                <hr>
+            </div>
+            <div>
+                <div class="activity-div">
+                    <div class="activity-row"><i class="fa-solid fa-comment lower-div-icons"></i>
+                        <div class="activity-details">
+                            <%= fullName%> posted a comment in <font color="#40CFBE">Avengers Initiative</font> project
+                        </div>
+                    </div>
+                    <div>2014/08/08 12:08</div>
+                </div>
+                <div class="activity-div">
+                    <div class="activity-row"><i class="fa-solid fa-truck-fast lower-div-icons"></i>
+                        <div class="activity-details">
+                            <%= fullName %> changed order status from <button class="boxed-btn" id="boxed-btn-1" color:
+                                    white;>Pending</button> to <button class="boxed-btn"
+                                    id="boxed-btn-2">Completed</button>
+                        </div>
+                    </div>
+                    <div>2014/08/08 12:08</div>
+                </div>
+                <div class="activity-div">
+                    <div class="activity-row"><i class="fa-solid fa-check lower-div-icons"></i>
+                        <div class="activity-details">
+                            <%= fullName %> posted a comment in <font color="#40CFBE">Lost in Translation opening scene
+                                </font> discussion
+                        </div>
+                    </div>
+                    <div>2014/08/08 12:08</div>
+                </div>
+                <div class="activity-div">
+                    <div class="activity-row"><i class="fa-solid fa-people-group lower-div-icons"></i>
+                        <div class="activity-details">
+                            <%= fullName %> posted a comment in <font color="#40CFBE">Avengers Initiative</font> project
+                        </div>
+                    </div>
+                    <div>2014/08/08 12:08</div>
+                </div>
+                <div class="activity-div">
+                    <div class="activity-row"><i class="fa-solid fa-heart lower-div-icons"></i>
+                        <div class="activity-details">
+                            <%= fullName %> changed order status from <button class="boxed-btn" id="boxed-btn-3">On
+                                    Hold</button> to <button class="boxed-btn" id="boxed-btn-4">Disabled</button>
+                        </div>
+                    </div>
+                    <div>2014/08/08 12:08</div>
+                </div>
+                <div class="activity-div">
+                    <div class="activity-row"><i class="fa-solid fa-check lower-div-icons"></i>
+                        <div class="activity-details">
+                            <%= fullName %> posted a comment in <font color="#40CFBE">Lost in Translation opening scene
+                                </font> discussion
+                        </div>
+                    </div>
+                    <div>2014/08/08 12:08</div>
+                </div>
+                <div class="activity-div">
+                    <div class="activity-row"><i class="fa-solid fa-truck-fast lower-div-icons"></i>
+                        <div class="activity-details">
+                            <%= fullName %> changed order status from Pending to Completed
+                        </div>
+                    </div>
+                    <div>2014/08/08 12:08</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
